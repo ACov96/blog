@@ -1,10 +1,10 @@
 <template>
-<sui-container fluid>
+<sui-container fluid class="Site">
   <navbar />
-  <sui-container>
+  <sui-container class="Site-content">
     <router-view />
   </sui-container>
-  <bottom-footer />
+  <bottom-footer class="" />
 </sui-container>
 </template>
 
@@ -22,9 +22,13 @@ export default {
 </script>
 
 <style scoped>
-.main-content {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
 }
 </style>

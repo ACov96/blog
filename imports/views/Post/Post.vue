@@ -74,7 +74,7 @@ export default {
 <style scoped>
 .left-border {
     border-left-style: solid;
-    border-color: #c6c6c6;
+    border-color: #204e99;
     margin-top: 1em;
     margin-bottom: 1em;
     border-radius: 2px;
