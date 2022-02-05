@@ -1,8 +1,7 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
+  <div class="blog-center">
+    <router-view/>
   </div>
-  <router-view/>
 </template>
 
 <style>
@@ -12,18 +11,25 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
 }
 
-#nav {
-  padding: 30px;
+
+.blog-center {
+  margin: auto;
+  width: 66%;
+  height: 100%;
+  box-shadow: -3px 5px 2px gray;
+  padding: 20px;
+  font-family: monospace;
+  text-align: left;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+html,body { 
+  height:100%; 
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

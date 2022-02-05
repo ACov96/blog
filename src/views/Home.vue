@@ -1,32 +1,28 @@
 <template>
-  <h1>Home</h1>
-  <div v-if="loadingPosts">Loading...</div>
-  <div v-else-if="posts != null && posts.length >= 1">
-    <div v-for="post in posts" v-bind:key="post.link">
-      <router-link :to="'/post/' + post.title">{{ post.title }}</router-link>, last edited on {{ post.date }}
+  <span style="float:right; text-align: right;"><a href="https://covington.tech">covington.tech</a></span>
+  <h1>Alex's Blog</h1>
+  <br>
+  <p>Welcome to my blog. I write posts about technology, programming, music, or whatever else I might be thinking about.</p>
+  <div class="post-list-section">
+    <div v-if="loadingPosts">Loading...</div>
+    <div v-else-if="posts != null && posts.length >= 1">
+      <div v-for="post in posts" v-bind:key="post.link">
+        <span style="text-align: left; float: left;">
+          <router-link :to="'/post/' + post.title">{{ post.title }}</router-link>
+        </span> 
+        <span style="float: right; text-align: right;">
+          Last edited on {{ post.date }}
+        </span>
+      </div>
     </div>
+    <div v-else>Something is wrong...</div>
   </div>
-  <div v-else>Something is wrong...</div>
 </template>
 
 <script>
-const api = 'https://cdn.covington.tech/blog/posts';
+import { parsePostsFromIndex } from '../util';
 
-function parsePostsFromIndex(indexString) {
-  const doc = new DOMParser().parseFromString(indexString, 'text/html');
-  const rawPostElements = doc.getElementsByTagName('pre').item(0).innerText.split('\n').filter(post => post !== "../" && post !== "");
-  const minifiedPosts = rawPostElements.map((post) => {
-    const words = post.split(/\s+/);
-    const _date = new Date(Date.parse(`${words[1]} ${words[2]}`));
-    return {
-      link: `${api}/${words[0]}`,
-      title: words[0].replace('.md', ''),
-      date: _date.toLocaleString("en-US", {timeZone: "America/Los_Angeles"}),
-    };
-  });
-  console.log(minifiedPosts);
-  return minifiedPosts;
-}
+const api = 'https://cdn.covington.tech/blog/posts';
 
 export default {
   name: 'Home',
@@ -63,6 +59,10 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #0069d1;
+}
+
+.post-list-section {
+  margin-top: 10%;
 }
 </style>
