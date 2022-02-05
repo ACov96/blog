@@ -17,11 +17,17 @@
 
 .blog-center {
   margin: auto;
-  width: 66%;
+  width: 80%;
   height: 100%;
   padding: 20px;
   font-family: monospace;
   text-align: left;
+}
+
+@media screen and (min-width: 992px) {
+  .blog-center {
+    width: 66%;
+  }
 }
 
 html,body { 
