@@ -19,7 +19,6 @@
   margin: auto;
   width: 66%;
   height: 100%;
-  box-shadow: -3px 5px 2px gray;
   padding: 20px;
   font-family: monospace;
   text-align: left;
@@ -30,6 +29,10 @@ html,body {
   padding: 0;
   margin: 0;
   font-family: monospace;
+}
+
+a, a:link, a:visited {
+  color: #0069d1;
 }
 
 </style>

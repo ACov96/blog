@@ -47,6 +47,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+h1 {
+  margin: 50px 0 0;
+}
 h3 {
   margin: 40px 0 0;
 }
@@ -57,9 +60,6 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-}
-a {
-  color: #0069d1;
 }
 
 .post-list-section {

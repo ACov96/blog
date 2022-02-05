@@ -6,9 +6,9 @@
   <div v-else-if="postBody != null">
         <div class="post-info">
             <h1>{{ $route.params.title }}</h1>
-            <h3 style="color: gray;"><i>Last edited: {{ this.postDate }}</i></h3>
+            <small><i style="color: gray;">Last edited: {{ this.postDate }}</i></small>
         </div>
-        <div style="margin-top: 50px" v-html="postBody"></div>
+        <div style="margin-top: 60px" v-html="postBody"></div>
   </div>
   <div v-else>Something went wrong...</div>
 </template>
@@ -55,7 +55,8 @@ export default {
     margin-bottom: 50px;
 }
 
-img {
-    filter: drop-shadow(5px 5px 5px #222)
+::v-deep img  {
+    filter: drop-shadow(10px 10px 10px #555);
+    border-radius: 10px;
 }
 </style>
