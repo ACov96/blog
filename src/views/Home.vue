@@ -22,7 +22,7 @@
 <script>
 import { parsePostsFromIndex } from '../util';
 
-const api = 'https://cdn.covington.tech/blog/posts';
+const api = 'https://cdn.covington.tech/blog/posts/';
 
 export default {
   name: 'Home',
